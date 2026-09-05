@@ -1,0 +1,46 @@
+html {
+  background: var(--color-bg);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(calc(100% - (var(--page-padding) * 2)), var(--container));
+  margin-inline: auto;
+}
+
+.container-wide {
+  width: min(calc(100% - (var(--page-padding) * 2)), var(--container-wide));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-space);
+}
+
+.section--dark {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.section--surface {
+  background: var(--color-surface);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
