@@ -10,15 +10,29 @@ body {
   min-height: 100vh;
 }
 
+main {
+  display: block;
+}
+
+/* =========================
+   CONTAINERS
+========================= */
+
 .container {
   width: min(calc(100% - (var(--page-padding) * 2)), var(--container));
+
   margin-inline: auto;
 }
 
 .container-wide {
   width: min(calc(100% - (var(--page-padding) * 2)), var(--container-wide));
+
   margin-inline: auto;
 }
+
+/* =========================
+   SECTIONS
+========================= */
 
 .section {
   padding-block: var(--section-space);
@@ -33,6 +47,10 @@ body {
   background: var(--color-surface);
 }
 
+/* =========================
+   TEXT HELPERS
+========================= */
+
 .text-accent {
   color: var(--color-accent);
 }
@@ -40,7 +58,40 @@ body {
 .text-muted {
   color: var(--color-text-muted);
 }
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 4px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  :root {
+    --section-space: 5.5rem;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  :root {
+    --section-space: 4.5rem;
+    --page-padding: 1.25rem;
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --section-space: 4rem;
+    --page-padding: 1rem;
+  }
 }

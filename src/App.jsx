@@ -7,10 +7,12 @@ import Services from "./pages/Services/Services";
 import Industries from "./pages/Industries/Industries";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
+import ScrollToTop from "./components/layout/ScrollToTop";
 
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <PageShell>
         <Routes>
           <Route path="/" element={<Home />} />

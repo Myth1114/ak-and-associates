@@ -1,0 +1,125 @@
+.home-services {
+  padding-block: var(--section-space);
+  background: var(--color-surface);
+}
+
+.home-services__header {
+  display: grid;
+  grid-template-columns: 0.4fr 1.15fr 0.75fr;
+  align-items: start;
+
+  gap: var(--space-7);
+
+  margin-bottom: var(--space-8);
+}
+
+.home-services__header h2 {
+  max-width: 720px;
+}
+
+.home-services__header h2 span {
+  color: var(--color-accent);
+}
+
+.home-services__intro {
+  max-width: 420px;
+}
+
+.home-services__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  border-top: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border);
+}
+
+.home-services__row {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  min-height: 190px;
+
+  padding: var(--space-5);
+
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+
+  color: var(--color-text);
+
+  overflow: hidden;
+
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+.home-services__number {
+  color: var(--color-accent);
+}
+
+.home-services__name {
+  max-width: 90%;
+
+  margin-top: auto;
+}
+
+.home-services__arrow {
+  position: absolute;
+  top: var(--space-5);
+  right: var(--space-5);
+
+  transition: transform var(--transition-fast);
+}
+
+.home-services__row:hover {
+  background: var(--color-bg);
+}
+
+.home-services__row:hover .home-services__arrow {
+  transform: translate(4px, -4px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .home-services__header {
+    grid-template-columns: 1fr;
+  }
+
+  .home-services__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-services__row {
+    min-height: 170px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .home-services__header {
+    gap: var(--space-5);
+    margin-bottom: var(--space-7);
+  }
+
+  .home-services__list {
+    grid-template-columns: 1fr;
+  }
+
+  .home-services__row {
+    min-height: 115px;
+
+    padding: var(--space-4);
+  }
+
+  .home-services__arrow {
+    top: var(--space-4);
+    right: var(--space-4);
+  }
+}

@@ -1,0 +1,143 @@
+.home-leadership {
+  padding-block: var(--section-space);
+
+  background: var(--color-surface);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.home-leadership__header {
+  display: grid;
+  grid-template-columns: 0.4fr 1.15fr 0.75fr;
+  align-items: start;
+
+  gap: var(--space-7);
+
+  margin-bottom: var(--space-8);
+}
+
+.home-leadership__header .section-title {
+  max-width: 720px;
+}
+
+.home-leadership__header .section-title span {
+  color: var(--color-accent);
+}
+
+.home-leadership__intro {
+  max-width: 420px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.home-leadership__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 420px));
+
+  justify-content: center;
+
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.home-leadership__person {
+  width: 100%;
+  min-width: 0;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.home-leadership__image {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 4.6;
+
+  overflow: hidden;
+
+  background: var(--color-bg);
+}
+
+.home-leadership__image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center top;
+
+  transition: transform var(--transition-slow);
+}
+
+.home-leadership__person:hover .home-leadership__image img {
+  transform: scale(1.025);
+}
+
+/* =========================
+   INFO
+========================= */
+
+.home-leadership__info {
+  padding-top: var(--space-4);
+}
+
+.home-leadership__info > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: var(--space-3);
+}
+
+.home-leadership__info > div .meta-text:first-child {
+  color: var(--color-accent);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .home-leadership__header {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-5);
+  }
+
+  .home-leadership__intro {
+    max-width: 620px;
+  }
+
+  .home-leadership__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: var(--space-4);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  .home-leadership__grid {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-7);
+  }
+
+  .home-leadership__person {
+    max-width: 390px;
+
+    margin-inline: auto;
+  }
+
+  .home-leadership__image {
+    aspect-ratio: 4 / 5;
+  }
+}

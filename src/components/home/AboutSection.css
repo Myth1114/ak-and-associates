@@ -1,0 +1,146 @@
+.home-about {
+  padding-block: var(--section-space);
+
+  background: var(--color-bg);
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.home-about__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+
+  align-items: start;
+
+  gap: clamp(4rem, 8vw, 9rem);
+}
+
+.home-about__left .section-title {
+  max-width: 650px;
+}
+
+.home-about__right {
+  max-width: 720px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.home-about__eyebrow {
+  margin-bottom: var(--space-5);
+}
+
+.home-about__lead {
+  max-width: 680px;
+
+  margin-bottom: var(--space-5);
+}
+
+.home-about__description {
+  max-width: 620px;
+
+  margin-bottom: var(--space-7);
+}
+
+/* =========================
+   FACTS
+========================= */
+
+.home-about__facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  margin-bottom: var(--space-6);
+
+  border-top: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border);
+}
+
+.home-about__facts > div {
+  min-height: 130px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: var(--space-4);
+
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.home-about__facts strong {
+  color: var(--color-text);
+
+  font-size: var(--font-size-base);
+  font-weight: var(--font-semibold);
+  line-height: 1.35;
+}
+
+/* =========================
+   LINK
+========================= */
+
+.home-about__link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: var(--space-3);
+
+  padding-bottom: 0.3rem;
+
+  border-bottom: 1px solid var(--color-text);
+
+  color: var(--color-text);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-semibold);
+
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.home-about__link span {
+  transition: transform var(--transition-fast);
+}
+
+.home-about__link:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.home-about__link:hover span {
+  transform: translateX(4px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .home-about__inner {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-7);
+  }
+
+  .home-about__right {
+    max-width: none;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  .home-about__facts {
+    grid-template-columns: 1fr;
+  }
+
+  .home-about__facts > div {
+    min-height: 105px;
+  }
+}

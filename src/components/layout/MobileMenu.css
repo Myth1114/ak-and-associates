@@ -1,43 +1,99 @@
 .mobile-menu {
   position: fixed;
   inset: 0;
+
   z-index: 200;
+
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.mobile-menu--open {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+/* Backdrop */
+
+.mobile-menu__backdrop {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+  background: rgba(35, 37, 29, 0.18);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  opacity: 0;
+
+  transition: opacity var(--transition-base);
+}
+
+.mobile-menu--open .mobile-menu__backdrop {
+  opacity: 1;
+}
+
+/* Drawer */
+
+.mobile-menu__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: min(82vw, 420px);
+  height: 100dvh;
 
   display: flex;
   flex-direction: column;
 
-  padding: 1.5rem;
+  padding: 1.4rem;
 
   background: var(--color-bg);
   color: var(--color-text);
 
-  opacity: 0;
-  visibility: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 
-  transform: translateY(-12px);
+  transform: translateX(100%);
 
-  transition: opacity var(--transition-base), visibility var(--transition-base),
-    transform var(--transition-base);
+  box-shadow: -20px 0 50px rgba(35, 37, 29, 0.08);
+
+  transition: transform 360ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.mobile-menu--open {
-  opacity: 1;
-  visibility: visible;
-
-  transform: translateY(0);
+.mobile-menu--open .mobile-menu__panel {
+  transform: translateX(0);
 }
+
+/* Top */
 
 .mobile-menu__top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  flex-shrink: 0;
+
+  padding-bottom: var(--space-5);
+
+  border-bottom: 1px solid var(--color-border);
 }
 
 .mobile-menu__brand {
+  display: inline-flex;
+  align-items: baseline;
+
+  color: var(--color-text);
+
   font-size: 2rem;
   font-weight: var(--font-bold);
-  letter-spacing: -0.07em;
   line-height: 1;
+  letter-spacing: -0.07em;
 }
 
 .mobile-menu__brand span {
@@ -45,6 +101,9 @@
 }
 
 .mobile-menu__close {
+  border: 0;
+  background: transparent;
+
   color: var(--color-text);
 
   font-size: var(--font-size-sm);
@@ -53,27 +112,31 @@
   cursor: pointer;
 }
 
-.mobile-menu__nav {
-  margin-top: auto;
-  margin-bottom: auto;
+/* Navigation */
 
+.mobile-menu__nav {
   display: flex;
   flex-direction: column;
+
+  margin-block: auto;
+
+  padding-block: var(--space-7);
 }
 
 .mobile-menu__nav a {
   display: grid;
-  grid-template-columns: 44px 1fr;
-  align-items: center;
+  grid-template-columns: 42px 1fr;
+  align-items: baseline;
 
-  padding-block: 1.3rem;
+  padding-block: 1.15rem;
 
   border-bottom: 1px solid var(--color-border);
 
-  font-size: clamp(2.2rem, 10vw, 4rem);
+  color: var(--color-text);
+
+  font-size: clamp(2rem, 8vw, 3.4rem);
   font-weight: var(--font-medium);
   line-height: 1;
-
   letter-spacing: -0.04em;
 
   transition: color var(--transition-fast), padding-left var(--transition-fast);
@@ -84,13 +147,9 @@
 }
 
 .mobile-menu__nav a span {
-  align-self: start;
-
-  padding-top: 0.25rem;
-
   color: var(--color-accent);
 
-  font-size: 0.75rem;
+  font-size: var(--font-size-xs);
   font-weight: var(--font-semibold);
   letter-spacing: 0;
 }
@@ -98,32 +157,62 @@
 .mobile-menu__nav a:hover,
 .mobile-menu__nav a.active {
   color: var(--color-accent);
-  padding-left: 0.4rem;
+  padding-left: 0.35rem;
 }
+
+/* Footer */
 
 .mobile-menu__footer {
   display: grid;
-  gap: 0.25rem;
+  gap: 0.35rem;
 
-  padding-top: 1.5rem;
+  flex-shrink: 0;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding-top: var(--space-5);
+  padding-bottom: calc(var(--space-3) + env(safe-area-inset-bottom));
+
+  border-top: 1px solid var(--color-border);
 }
 
 .mobile-menu__footer a {
-  width: fit-content;
-
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-3);
 
   color: var(--color-text);
 
+  font-size: var(--font-size-sm);
   font-weight: var(--font-semibold);
 }
 
 .mobile-menu__footer p {
   color: var(--color-text-muted);
-  font-size: var(--font-size-sm);
+
+  font-size: var(--font-size-xs);
 }
+
+/* Small-height devices */
+
+@media (max-height: 700px) {
+  .mobile-menu__nav {
+    margin-block: 0;
+    padding-block: var(--space-5);
+  }
+
+  .mobile-menu__nav a {
+    padding-block: 0.9rem;
+
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
+  }
+}
+
+/* Narrow phones */
+
+@media (max-width: 420px) {
+  .mobile-menu__panel {
+    width: 86vw;
+  }
+}
+
+/* Desktop */
 
 @media (min-width: 801px) {
   .mobile-menu {
