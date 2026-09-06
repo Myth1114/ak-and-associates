@@ -8,6 +8,7 @@ import Industries from "./pages/Industries/Industries";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import ScrollToTop from "./components/layout/ScrollToTop";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/industries" element={<Industries />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </PageShell>
     </BrowserRouter>

@@ -2,7 +2,7 @@
   padding-block: var(--section-space);
 
   background: var(--color-primary);
-  color: var(--color-white);
+  color: var(--color-text-on-dark);
 }
 
 /* =========================
@@ -30,7 +30,7 @@
 .home-process__eyebrow {
   margin-bottom: var(--space-5);
 
-  color: #a7b76a;
+  color: var(--color-accent-on-dark);
 }
 
 .home-process__intro .section-title {
@@ -38,11 +38,11 @@
 
   margin-bottom: var(--space-5);
 
-  color: var(--color-white);
+  color: var(--color-text-on-dark);
 }
 
 .home-process__intro .section-title span {
-  color: #a7b76a;
+  color: var(--color-accent-on-dark);
 }
 
 .home-process__description {
@@ -50,7 +50,7 @@
 
   margin-bottom: var(--space-6);
 
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-muted-on-dark);
 }
 
 .home-process__link {
@@ -61,9 +61,9 @@
 
   padding-bottom: 0.3rem;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid var(--color-border-on-dark);
 
-  color: var(--color-white);
+  color: var(--color-text-on-dark);
 
   font-size: var(--font-size-sm);
   font-weight: var(--font-semibold);
@@ -76,8 +76,8 @@
 }
 
 .home-process__link:hover {
-  color: #a7b76a;
-  border-color: #a7b76a;
+  color: var(--color-accent-on-dark);
+  border-color: var(--color-accent-on-dark);
 }
 
 .home-process__link:hover span {
@@ -89,13 +89,13 @@
 ========================= */
 
 .home-process__steps {
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid var(--color-border-on-dark);
 }
 
 .home-process__step {
   padding-block: clamp(2rem, 5vw, 4rem);
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid var(--color-border-on-dark);
 }
 
 .home-process__step-top {
@@ -107,11 +107,11 @@
 }
 
 .home-process__step-top .meta-text:first-child {
-  color: #a7b76a;
+  color: var(--color-accent-on-dark);
 }
 
 .home-process__step-top .meta-text:last-child {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-muted-on-dark);
 }
 
 .home-process__step .subsection-title {
@@ -119,13 +119,13 @@
 
   margin-bottom: var(--space-4);
 
-  color: var(--color-white);
+  color: var(--color-text-on-dark);
 }
 
 .home-process__step .section-description {
   max-width: 560px;
 
-  color: rgba(255, 255, 255, 0.58);
+  color: var(--color-text-muted-on-dark);
 }
 
 /* =========================

@@ -7,17 +7,19 @@ import "./ServicesSection.css";
 
 const ServicesSection = () => {
   return (
-    <section className="home-services">
+    <section className="home-services" data-reveal-group>
       <div className="container-wide">
         <div className="home-services__header">
-          <p className="home-services__eyebrow eyebrow">What We Do</p>
+          <p className="home-services__eyebrow eyebrow" data-reveal>
+            What We Do
+          </p>
 
-          <h2 className="section-title">
+          <h2 className="section-title" data-reveal>
             Financial support built around
             <span> real business needs.</span>
           </h2>
 
-          <p className="home-services__intro section-description">
+          <p className="home-services__intro section-description" data-reveal>
             From day-to-day accounting and payroll to tax and business advisory,
             AK and Associates supports the financial work that keeps businesses
             organized and moving forward.
@@ -30,6 +32,7 @@ const ServicesSection = () => {
               key={service.id}
               to={`/services#${service.id}`}
               className="home-services__row"
+              data-reveal
             >
               <span className="home-services__number meta-text">
                 {service.number}.

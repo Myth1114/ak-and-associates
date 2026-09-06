@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import { services } from "../../data/services";
+
 import "./Footer.css";
 
 const Footer = () => {
@@ -26,19 +28,20 @@ const Footer = () => {
             <div className="site-footer__column">
               <p className="site-footer__label">Services</p>
 
-              <Link to="/services">Accounting</Link>
-              <Link to="/services">Payroll Management</Link>
-              <Link to="/services">Tax Advisory</Link>
-              <Link to="/services">Financial Advisory</Link>
-              <Link to="/services">Business Consulting</Link>
-              <Link to="/services">Outsourcing</Link>
+              {services.map((service) => (
+                <Link key={service.id} to={`/services#${service.id}`}>
+                  {service.title}
+                </Link>
+              ))}
             </div>
 
             <div className="site-footer__column">
               <p className="site-footer__label">Company</p>
 
               <Link to="/about">About</Link>
+
               <Link to="/industries">Industries</Link>
+
               <Link to="/contact">Contact</Link>
             </div>
           </div>
@@ -49,6 +52,7 @@ const Footer = () => {
 
           <div className="site-footer__legal">
             <Link to="/contact">Privacy</Link>
+
             <Link to="/contact">Disclaimer</Link>
           </div>
         </div>

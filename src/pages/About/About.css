@@ -40,8 +40,8 @@
 }
 
 /* ========================================
-     FIRM INTRODUCTION
-  ======================================== */
+   FIRM INTRODUCTION
+======================================== */
 
 .about-page__intro {
   padding-block: var(--section-space);
@@ -80,8 +80,8 @@
 }
 
 /* ========================================
-     FACTS
-  ======================================== */
+   FACTS
+======================================== */
 
 .about-page__facts {
   padding-block: var(--section-space);
@@ -131,14 +131,14 @@
 }
 
 /* ========================================
-     APPROACH
-  ======================================== */
+   APPROACH
+======================================== */
 
 .about-page__approach {
   padding-block: var(--section-space);
 
   background: var(--color-primary);
-  color: var(--color-white);
+  color: var(--color-text-on-dark);
 }
 
 .about-page__approach-inner {
@@ -149,17 +149,17 @@
 }
 
 .about-page__approach .about-page__eyebrow {
-  color: #a7b76a;
+  color: var(--color-accent-on-dark);
 }
 
 .about-page__approach-heading .section-title {
   max-width: 580px;
 
-  color: var(--color-white);
+  color: var(--color-text-on-dark);
 }
 
 .about-page__approach-list {
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid var(--color-border-on-dark);
 }
 
 .about-page__approach-item {
@@ -170,30 +170,30 @@
 
   padding-block: var(--space-7);
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid var(--color-border-on-dark);
 }
 
 .about-page__approach-item > .meta-text {
   padding-top: 0.3rem;
 
-  color: #a7b76a;
+  color: var(--color-accent-on-dark);
 }
 
 .about-page__approach-item .subsection-title {
   margin-bottom: var(--space-3);
 
-  color: var(--color-white);
+  color: var(--color-text-on-dark);
 }
 
 .about-page__approach-item .section-description {
   max-width: 520px;
 
-  color: rgba(255, 255, 255, 0.62);
+  color: var(--color-text-muted-on-dark);
 }
 
 /* ========================================
-     TABLET
-  ======================================== */
+   TABLET
+======================================== */
 
 @media (max-width: 980px) {
   .about-page__hero-inner {
@@ -226,8 +226,8 @@
 }
 
 /* ========================================
-     MOBILE
-  ======================================== */
+   MOBILE
+======================================== */
 
 @media (max-width: 650px) {
   .about-page__hero-inner {

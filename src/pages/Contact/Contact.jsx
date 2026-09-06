@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+
 import {
   Mail,
   MapPin,
@@ -10,9 +11,17 @@ import {
 
 import { services } from "../../data/services";
 
+import useReveal from "../../hooks/useReveals";
+
 import "./Contact.css";
+import SEO from "../../components/seo/SEO";
+import { seo } from "../../data/seo";
 
 const Contact = () => {
+  const pageRef = useRef(null);
+
+  useReveal(pageRef);
+
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -38,20 +47,25 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <section className="contact-page__hero">
+    <div ref={pageRef}>
+      <SEO {...seo.contact} />
+      <section
+        className="contact-page__hero"
+        data-reveal-group
+        data-reveal-immediate
+      >
         <div className="container-wide contact-page__hero-inner">
           <div>
-            <p className="contact-page__eyebrow eyebrow">
+            <p className="contact-page__eyebrow eyebrow" data-reveal>
               Contact AK and Associates
             </p>
 
-            <h1 className="contact-page__title page-title">
+            <h1 className="contact-page__title page-title" data-reveal>
               Let’s talk about the financial side of your business.
             </h1>
           </div>
 
-          <p className="contact-page__hero-copy page-description">
+          <p className="contact-page__hero-copy page-description" data-reveal>
             Whether you need help with accounting, payroll, tax matters,
             financial guidance or business support, tell us what you need and
             we’ll help you identify the right starting point.
@@ -59,17 +73,25 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="contact-page__main">
+      <section className="contact-page__main" data-reveal-group>
         <div className="container-wide contact-page__main-inner">
           <div className="contact-page__details">
             <div className="contact-page__details-heading">
-              <p className="eyebrow">Contact Details</p>
+              <p className="eyebrow" data-reveal>
+                Contact Details
+              </p>
 
-              <h2 className="section-title">Reach us directly.</h2>
+              <h2 className="section-title" data-reveal>
+                Reach us directly.
+              </h2>
             </div>
 
             <div className="contact-page__details-list">
-              <a href="tel:+9779847031266" className="contact-page__detail">
+              <a
+                href="tel:+9779847031266"
+                className="contact-page__detail"
+                data-reveal
+              >
                 <div className="contact-page__detail-icon">
                   <Phone size={20} strokeWidth={1.4} />
                 </div>
@@ -91,6 +113,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="contact-page__detail"
+                data-reveal
               >
                 <div className="contact-page__detail-icon">
                   <MessageCircle size={20} strokeWidth={1.4} />
@@ -111,6 +134,7 @@ const Contact = () => {
               <a
                 href="mailto:akandassociates@gmail.com"
                 className="contact-page__detail"
+                data-reveal
               >
                 <div className="contact-page__detail-icon">
                   <Mail size={20} strokeWidth={1.4} />
@@ -128,7 +152,10 @@ const Contact = () => {
                 />
               </a>
 
-              <div className="contact-page__detail contact-page__detail--static">
+              <div
+                className="contact-page__detail contact-page__detail--static"
+                data-reveal
+              >
                 <div className="contact-page__detail-icon">
                   <MapPin size={20} strokeWidth={1.4} />
                 </div>
@@ -139,7 +166,10 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="contact-page__detail contact-page__detail--static">
+              <div
+                className="contact-page__detail contact-page__detail--static"
+                data-reveal
+              >
                 <div className="contact-page__detail-icon">
                   <Clock3 size={20} strokeWidth={1.4} />
                 </div>
@@ -154,19 +184,25 @@ const Contact = () => {
 
           <div className="contact-page__form-wrap">
             <div className="contact-page__form-heading">
-              <p className="eyebrow">Send an Enquiry</p>
+              <p className="eyebrow" data-reveal>
+                Send an Enquiry
+              </p>
 
-              <h2 className="section-title">
+              <h2 className="section-title" data-reveal>
                 Tell us what you need help with.
               </h2>
 
-              <p className="section-description">
+              <p className="section-description" data-reveal>
                 Share a few details about your business and the support you’re
                 looking for.
               </p>
             </div>
 
-            <form className="contact-page__form" onSubmit={handleSubmit}>
+            <form
+              className="contact-page__form"
+              onSubmit={handleSubmit}
+              data-reveal
+            >
               <div className="contact-page__field-grid">
                 <div className="contact-page__field">
                   <label htmlFor="name">Name</label>
@@ -273,23 +309,25 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="contact-page__note">
+      <section className="contact-page__note" data-reveal-group>
         <div className="container-wide contact-page__note-inner">
-          <p className="eyebrow">Start Simple</p>
+          <p className="eyebrow" data-reveal>
+            Start Simple
+          </p>
 
           <div>
-            <h2 className="section-title">
+            <h2 className="section-title" data-reveal>
               You don’t need to know exactly which service you need.
             </h2>
 
-            <p className="section-description">
+            <p className="section-description" data-reveal>
               Tell us what you’re trying to manage or improve, and we can help
               you understand which type of support may be appropriate.
             </p>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

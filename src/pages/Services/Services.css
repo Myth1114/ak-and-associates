@@ -36,8 +36,8 @@
 }
 
 /* ========================================
-     SERVICES
-  ======================================== */
+   SERVICES
+======================================== */
 
 .services-page__list {
   padding-block: var(--section-space);
@@ -87,8 +87,8 @@
 }
 
 /* ========================================
-     SERVICE POINTS
-  ======================================== */
+   SERVICE POINTS
+======================================== */
 
 .services-page__service-points {
   border-top: 1px solid var(--color-border);
@@ -106,9 +106,9 @@
 }
 
 .services-page__point svg {
-  color: var(--color-accent);
-
   flex-shrink: 0;
+
+  color: var(--color-accent);
 }
 
 .services-page__point .body-text {
@@ -119,13 +119,14 @@
 }
 
 /* ========================================
-     CTA
-  ======================================== */
+   CTA
+======================================== */
 
 .services-page__cta {
   padding-block: var(--section-space);
 
   background: var(--color-primary);
+  color: var(--color-text-on-dark);
 }
 
 .services-page__cta-inner {
@@ -138,13 +139,13 @@
 }
 
 .services-page__cta .services-page__eyebrow {
-  color: #a7b76a;
+  color: var(--color-accent-on-dark);
 }
 
 .services-page__cta .section-title {
   max-width: 800px;
 
-  color: var(--color-white);
+  color: var(--color-text-on-dark);
 }
 
 .services-page__cta-action {
@@ -158,7 +159,7 @@
 .services-page__cta-action .section-description {
   max-width: 440px;
 
-  color: rgba(255, 255, 255, 0.62);
+  color: var(--color-text-muted-on-dark);
 }
 
 .services-page__cta-link {
@@ -201,8 +202,8 @@
 }
 
 /* ========================================
-     TABLET
-  ======================================== */
+   TABLET
+======================================== */
 
 @media (max-width: 980px) {
   .services-page__hero-inner {
@@ -237,8 +238,8 @@
 }
 
 /* ========================================
-     MOBILE
-  ======================================== */
+   MOBILE
+======================================== */
 
 @media (max-width: 650px) {
   .services-page__eyebrow {

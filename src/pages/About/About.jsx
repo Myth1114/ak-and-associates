@@ -1,25 +1,40 @@
+import { useRef } from "react";
+
 import LeadershipSection from "../../components/home/LeadershipSection";
 import CTASection from "../../components/home/CTASection";
 
+import useReveal from "../../hooks/useReveals";
+
 import "./About.css";
+import SEO from "../../components/seo/SEO";
+import { seo } from "../../data/seo";
 
 const About = () => {
+  const pageRef = useRef(null);
+
+  useReveal(pageRef);
+
   return (
-    <>
-      <section className="about-page__hero">
+    <div ref={pageRef}>
+      <SEO {...seo.about} />
+      <section
+        className="about-page__hero"
+        data-reveal-group
+        data-reveal-immediate
+      >
         <div className="container-wide about-page__hero-inner">
           <div className="about-page__hero-content">
-            <p className="about-page__eyebrow eyebrow">
+            <p className="about-page__eyebrow eyebrow" data-reveal>
               About AK and Associates
             </p>
 
-            <h1 className="about-page__title page-title">
+            <h1 className="about-page__title page-title" data-reveal>
               Practical financial support for businesses that need clarity and
               structure.
             </h1>
           </div>
 
-          <p className="about-page__hero-copy page-description">
+          <p className="about-page__hero-copy page-description" data-reveal>
             AK and Associates is an accounting and business advisory firm in
             Nepal, supporting businesses with accounting, payroll, tax matters,
             financial guidance and practical consulting.
@@ -27,23 +42,25 @@ const About = () => {
         </div>
       </section>
 
-      <section className="about-page__intro">
+      <section className="about-page__intro" data-reveal-group>
         <div className="container-wide about-page__intro-inner">
-          <p className="about-page__eyebrow eyebrow">The Firm</p>
+          <p className="about-page__eyebrow eyebrow" data-reveal>
+            The Firm
+          </p>
 
           <div className="about-page__intro-content">
-            <h2 className="about-page__intro-title section-title">
+            <h2 className="about-page__intro-title section-title" data-reveal>
               Built around the financial work that keeps businesses running.
             </h2>
 
             <div className="about-page__intro-copy">
-              <p className="about-page__lead body-text--strong">
+              <p className="about-page__lead body-text--strong" data-reveal>
                 Established in 2078 B.S., AK and Associates works with
                 businesses that need dependable support across their day-to-day
                 financial operations.
               </p>
 
-              <p className="body-text">
+              <p className="body-text" data-reveal>
                 Our focus is practical: keeping financial records organized,
                 supporting payroll and tax-related work, helping businesses
                 understand their numbers and providing guidance when financial
@@ -54,9 +71,9 @@ const About = () => {
         </div>
       </section>
 
-      <section className="about-page__facts">
+      <section className="about-page__facts" data-reveal-group>
         <div className="container-wide about-page__facts-grid">
-          <article className="about-page__fact">
+          <article className="about-page__fact" data-reveal>
             <span className="meta-text">01.</span>
 
             <div>
@@ -65,7 +82,7 @@ const About = () => {
             </div>
           </article>
 
-          <article className="about-page__fact">
+          <article className="about-page__fact" data-reveal>
             <span className="meta-text">02.</span>
 
             <div>
@@ -74,7 +91,7 @@ const About = () => {
             </div>
           </article>
 
-          <article className="about-page__fact">
+          <article className="about-page__fact" data-reveal>
             <span className="meta-text">03.</span>
 
             <div>
@@ -83,7 +100,7 @@ const About = () => {
             </div>
           </article>
 
-          <article className="about-page__fact">
+          <article className="about-page__fact" data-reveal>
             <span className="meta-text">04.</span>
 
             <div>
@@ -94,18 +111,20 @@ const About = () => {
         </div>
       </section>
 
-      <section className="about-page__approach">
+      <section className="about-page__approach" data-reveal-group>
         <div className="container-wide about-page__approach-inner">
           <div className="about-page__approach-heading">
-            <p className="about-page__eyebrow eyebrow">Our Approach</p>
+            <p className="about-page__eyebrow eyebrow" data-reveal>
+              Our Approach
+            </p>
 
-            <h2 className="section-title">
+            <h2 className="section-title" data-reveal>
               Keep the financial side of business clear and useful.
             </h2>
           </div>
 
           <div className="about-page__approach-list">
-            <article className="about-page__approach-item">
+            <article className="about-page__approach-item" data-reveal>
               <span className="meta-text">01.</span>
 
               <div>
@@ -118,7 +137,7 @@ const About = () => {
               </div>
             </article>
 
-            <article className="about-page__approach-item">
+            <article className="about-page__approach-item" data-reveal>
               <span className="meta-text">02.</span>
 
               <div>
@@ -131,7 +150,7 @@ const About = () => {
               </div>
             </article>
 
-            <article className="about-page__approach-item">
+            <article className="about-page__approach-item" data-reveal>
               <span className="meta-text">03.</span>
 
               <div>
@@ -149,7 +168,7 @@ const About = () => {
 
       <LeadershipSection />
       <CTASection />
-    </>
+    </div>
   );
 };
 

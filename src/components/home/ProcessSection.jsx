@@ -4,30 +4,35 @@ import "./ProcessSection.css";
 
 const ProcessSection = () => {
   return (
-    <section className="home-process">
+    <section className="home-process" data-reveal-group>
       <div className="container-wide home-process__inner">
         <div className="home-process__intro">
-          <p className="home-process__eyebrow eyebrow">How We Help</p>
+          <p className="home-process__eyebrow eyebrow" data-reveal>
+            How We Help
+          </p>
 
-          <h2 className="section-title">
+          <h2 className="section-title" data-reveal>
             Practical financial support,
             <span> without unnecessary complexity.</span>
           </h2>
 
-          <p className="home-process__description section-description">
+          <p
+            className="home-process__description section-description"
+            data-reveal
+          >
             We work closely with businesses to understand their financial
             operations, organize the essentials and provide clear support where
             it matters most.
           </p>
 
-          <Link to="/about" className="home-process__link">
+          <Link to="/about" className="home-process__link" data-reveal>
             About AK and Associates
             <span aria-hidden="true">→</span>
           </Link>
         </div>
 
         <div className="home-process__steps">
-          <article className="home-process__step">
+          <article className="home-process__step" data-reveal>
             <div className="home-process__step-top">
               <span className="meta-text">01.</span>
               <p className="meta-text">Understand</p>
@@ -41,7 +46,7 @@ const ProcessSection = () => {
             </p>
           </article>
 
-          <article className="home-process__step">
+          <article className="home-process__step" data-reveal>
             <div className="home-process__step-top">
               <span className="meta-text">02.</span>
               <p className="meta-text">Organize</p>
@@ -55,7 +60,7 @@ const ProcessSection = () => {
             </p>
           </article>
 
-          <article className="home-process__step">
+          <article className="home-process__step" data-reveal>
             <div className="home-process__step-top">
               <span className="meta-text">03.</span>
               <p className="meta-text">Support</p>

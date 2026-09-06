@@ -1,8 +1,35 @@
-import { NavLink, Link } from "react-router-dom";
+import { useEffect } from "react";
+import { NavLink, Link, useLocation } from "react-router-dom";
 
 import "./MobileMenu.css";
 
 const MobileMenu = ({ isOpen, onClose }) => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, onClose]);
+
+  useEffect(() => {
+    if (isOpen) {
+      onClose();
+    }
+  }, [pathname]);
+
   return (
     <div
       className={`mobile-menu ${isOpen ? "mobile-menu--open" : ""}`}
@@ -34,6 +61,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
             type="button"
             className="mobile-menu__close"
             onClick={onClose}
+            aria-label="Close navigation menu"
           >
             Close
           </button>
