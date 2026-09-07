@@ -289,7 +289,38 @@ a.contact-page__detail:hover .contact-page__detail-arrow {
 .contact-page__submit:hover svg {
   transform: translateX(3px);
 }
+.services-page__service-link {
+  display: inline-flex;
+  align-items: center;
 
+  gap: var(--space-3);
+
+  width: fit-content;
+
+  padding-bottom: 0.3rem;
+
+  border-bottom: 1px solid var(--color-border);
+
+  color: var(--color-text);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-semibold);
+
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.services-page__service-link span {
+  transition: transform var(--transition-fast);
+}
+
+.services-page__service-link:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.services-page__service-link:hover span {
+  transform: translateX(4px);
+}
 /* ========================================
      NOTE
   ======================================== */
@@ -326,7 +357,10 @@ a.contact-page__detail:hover .contact-page__detail-arrow {
 
   color: rgba(255, 255, 255, 0.62);
 }
-
+.contact-page__business-card {
+  padding-block: var(--section-space);
+  background: var(--color-surface);
+}
 /* ========================================
      TABLET
   ======================================== */

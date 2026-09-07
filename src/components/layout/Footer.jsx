@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { services } from "../../data/services";
+import BrandMark from "../ui/BrandMark";
 
 import "./Footer.css";
 
@@ -15,7 +16,7 @@ const Footer = () => {
               className="site-footer__brand"
               aria-label="AK and Associates home"
             >
-              ak<span>.</span>
+              <BrandMark variant="dark" />
             </Link>
 
             <p className="site-footer__description">
@@ -48,7 +49,7 @@ const Footer = () => {
         </div>
 
         <div className="site-footer__bottom">
-          <p>© {new Date().getFullYear()} AK and Associates</p>
+          <p>© {new Date().getFullYear()} A.K. and Associates</p>
 
           <div className="site-footer__legal">
             <Link to="/contact">Privacy</Link>

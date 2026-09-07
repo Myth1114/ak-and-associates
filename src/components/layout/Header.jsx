@@ -4,6 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import MobileMenu from "./MobileMenu";
 
 import "./Header.css";
+import BrandMark from "../ui/BrandMark";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,8 +26,7 @@ const Header = () => {
             className="site-header__brand"
             aria-label="AK and Associates home"
           >
-            <span className="site-header__brand-text">ak</span>
-            <span className="site-header__brand-dot">.</span>
+            <BrandMark />
           </Link>
 
           <nav className="site-header__nav" aria-label="Primary navigation">

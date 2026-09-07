@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-
+import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import {
   Mail,
   MapPin,
@@ -21,7 +21,15 @@ const Contact = () => {
   const pageRef = useRef(null);
 
   useReveal(pageRef);
+  const [searchParams] = useSearchParams();
 
+  const requestedService = searchParams.get("service");
+
+  const selectedService = services.some(
+    (service) => service.id === requestedService
+  )
+    ? requestedService
+    : "";
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -45,7 +53,18 @@ const Contact = () => {
 
     console.log("Contact form:", formData);
   };
+  useEffect(() => {
+    const requestedService = searchParams.get("service");
 
+    const isValidService = services.some(
+      (service) => service.id === requestedService
+    );
+
+    setFormData((current) => ({
+      ...current,
+      service: isValidService ? requestedService : "",
+    }));
+  }, [searchParams]);
   return (
     <div ref={pageRef}>
       <SEO {...seo.contact} />
@@ -272,17 +291,16 @@ const Contact = () => {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  required
                 >
                   <option value="">Select a service</option>
 
                   {services.map((service) => (
-                    <option key={service.id} value={service.title}>
+                    <option key={service.id} value={service.id}>
                       {service.title}
                     </option>
                   ))}
 
-                  <option value="Not Sure">Not Sure</option>
+                  <option value="not-sure">Not Sure</option>
                 </select>
               </div>
 

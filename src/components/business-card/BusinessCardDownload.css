@@ -1,0 +1,177 @@
+.business-card-download {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: var(--space-6);
+
+  padding-block: var(--space-6);
+}
+
+.business-card-download__intro .eyebrow {
+  margin-bottom: var(--space-3);
+}
+
+/* =========================
+     BUTTON
+  ========================= */
+
+.business-card-download__button {
+  display: inline-flex;
+  align-items: center;
+
+  gap: var(--space-3);
+
+  flex-shrink: 0;
+
+  padding: 0.95rem 1.2rem;
+
+  border-radius: var(--radius-sm);
+
+  background: var(--color-primary);
+  color: var(--color-white);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-semibold);
+
+  transition: background var(--transition-fast), color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.business-card-download__button:hover:not(:disabled) {
+  background: var(--color-accent);
+
+  transform: translateY(-2px);
+}
+
+.business-card-download__button:disabled {
+  opacity: 0.65;
+
+  cursor: wait;
+}
+
+/* =========================
+     HERO VARIANT
+  ========================= */
+
+.business-card-download--hero {
+  width: auto;
+
+  padding: 0;
+}
+
+.business-card-download--hero .business-card-download__button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+
+  gap: var(--space-4);
+
+  padding: 0.95rem 1.15rem;
+
+  border-radius: var(--radius-md);
+
+  background: var(--color-accent);
+  color: var(--color-white);
+
+  font-size: var(--font-size-base);
+  font-weight: var(--font-semibold);
+  line-height: 1.2;
+
+  white-space: nowrap;
+
+  transition: background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.business-card-download--hero
+  .business-card-download__button:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+  color: var(--color-white);
+
+  transform: translateY(-2px);
+}
+
+.business-card-download--hero .business-card-download__button svg {
+  flex-shrink: 0;
+}
+
+/* =========================
+     MENU VARIANT
+  ========================= */
+
+.business-card-download--menu {
+  width: 100%;
+
+  padding: 0;
+}
+
+.business-card-download--menu .business-card-download__button {
+  width: 100%;
+
+  padding: var(--space-4) 0;
+
+  border-radius: 0;
+
+  background: transparent;
+  color: var(--color-text);
+
+  font-size: var(--font-size-sm);
+}
+
+.business-card-download--menu
+  .business-card-download__button:hover:not(:disabled) {
+  background: transparent;
+  color: var(--color-accent);
+
+  transform: none;
+}
+
+/* =========================
+     HIDDEN EXPORT CARD
+  ========================= */
+
+.business-card-download__export {
+  position: fixed;
+
+  left: -10000px;
+  top: 0;
+
+  width: 1260px;
+  height: 720px;
+
+  pointer-events: none;
+}
+
+/* =========================
+     MOBILE
+  ========================= */
+
+@media (max-width: 650px) {
+  .business-card-download--hero .business-card-download__button {
+    padding: 0.85rem 0.9rem;
+
+    font-size: var(--font-size-sm);
+
+    gap: var(--space-2);
+  }
+
+  .business-card-download:not(.business-card-download--hero):not(
+      .business-card-download--menu
+    ) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .business-card-download:not(.business-card-download--hero):not(
+      .business-card-download--menu
+    )
+    .business-card-download__button {
+    width: 100%;
+
+    justify-content: center;
+  }
+}

@@ -13,6 +13,8 @@ import useReveal from "../../hooks/useReveals";
 import SEO from "../../components/seo/SEO";
 import { seo } from "../../data/seo";
 import BusinessSchema from "../../components/seo/BusinessSchema";
+import WhyAKSection from "../../components/home/WhyAKSection";
+import FAQSection from "../../components/home/FAQSection";
 
 const Home = () => {
   const pageRef = useRef(null);
@@ -26,9 +28,11 @@ const Home = () => {
       <HeroSection />
       <ServicesSection />
       <IndustriesSection />
+      <WhyAKSection />
       <ProcessSection />
       <AboutSection />
       <LeadershipSection />
+      <FAQSection />
       <CTASection />
     </div>
   );

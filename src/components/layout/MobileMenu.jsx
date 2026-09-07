@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
+import BusinessCardDownload from "../business-card/BusinessCardDownload";
+import BrandMark from "../ui/BrandMark";
 
 import "./MobileMenu.css";
 
@@ -54,7 +56,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
             onClick={onClose}
             aria-label="AK and Associates home"
           >
-            ak<span>.</span>
+            <BrandMark className="brand-mark--compact" />
           </Link>
 
           <button
@@ -90,11 +92,12 @@ const MobileMenu = ({ isOpen, onClose }) => {
         </nav>
 
         <div className="mobile-menu__footer">
-          <Link to="/contact" onClick={onClose}>
-            Talk to Us ↗
-          </Link>
-
-          <p>AK and Associates</p>
+          <BusinessCardDownload
+            variant="menu"
+            label="Download Business Card"
+            showIntro={false}
+          />
+          <p>A.K. and Associates</p>
           <p>Nepal</p>
         </div>
       </aside>

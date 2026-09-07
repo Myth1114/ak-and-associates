@@ -1,0 +1,59 @@
+.brand-mark {
+  display: inline-flex;
+  align-items: baseline;
+
+  gap: var(--space-2);
+
+  width: fit-content;
+}
+
+.brand-mark__main {
+  display: inline-flex;
+  align-items: baseline;
+  color: var(--color-primary);
+  font-size: 2rem;
+  font-weight: var(--font-bold);
+  line-height: 1;
+  letter-spacing: -0.07em;
+}
+
+.brand-mark__dot {
+  color: var(--color-accent);
+}
+
+.brand-mark__name {
+  color: var(--color-text-muted);
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-medium);
+
+  line-height: 1;
+
+  letter-spacing: 0.02em;
+
+  white-space: nowrap;
+}
+
+/* Dark surfaces such as the footer */
+
+.brand-mark--dark .brand-mark__main {
+  color: var(--color-text-on-dark);
+}
+
+.brand-mark--dark .brand-mark__dot {
+  color: var(--color-accent-on-dark);
+}
+
+.brand-mark--dark .brand-mark__name {
+  color: var(--color-text-muted-on-dark);
+}
+
+/* Smaller version when needed */
+
+.brand-mark--compact .brand-mark__main {
+  font-size: 1.8rem;
+}
+
+.brand-mark--compact .brand-mark__name {
+  font-size: 0.68rem;
+}

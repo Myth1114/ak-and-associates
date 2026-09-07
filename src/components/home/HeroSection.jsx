@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { MoveUpRight } from "lucide-react";
 
 import { services } from "../../data/services";
 
 import "./HeroSection.css";
+import BusinessCardDownload from "../business-card/BusinessCardDownload";
 
 const HeroSection = () => {
   return (
@@ -34,14 +34,15 @@ const HeroSection = () => {
 
           <div className="home-hero__actions" data-reveal>
             <Link to="/services" className="home-hero__primary">
-              Explore Services
+              <span>Explore Services</span>
               <span aria-hidden="true">→</span>
             </Link>
 
-            <Link to="/contact" className="home-hero__secondary">
-              Talk to Us
-              <MoveUpRight size={16} strokeWidth={1} aria-hidden="true" />
-            </Link>
+            <BusinessCardDownload
+              variant="hero"
+              label="Business Card"
+              showIntro={false}
+            />
           </div>
         </div>
 

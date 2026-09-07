@@ -73,6 +73,13 @@ const Services = () => {
                   </div>
                 ))}
               </div>
+              <Link
+                to={`/contact?service=${service.id}`}
+                className="services-page__service-link"
+              >
+                Discuss {service.title}
+                <span aria-hidden="true">→</span>
+              </Link>
             </article>
           ))}
         </div>

@@ -41,28 +41,38 @@
   margin-bottom: var(--space-6);
 }
 
+/* =========================
+   HERO ACTIONS
+========================= */
+
 .home-hero__actions {
   display: flex;
-  align-items: center;
+  align-items: stretch;
 
-  gap: var(--space-5);
+  gap: var(--space-3);
 }
 
 .home-hero__primary {
   display: inline-flex;
   align-items: center;
+  justify-content: space-between;
 
-  gap: var(--space-3);
+  flex: 0 0 220px;
 
-  padding: 0.95rem 1.25rem;
+  gap: var(--space-4);
 
-  border-radius: var(--radius-sm);
+  padding: 0.95rem 1.15rem;
+
+  border-radius: var(--radius-md);
 
   background: var(--color-accent);
   color: var(--color-white);
 
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
   font-weight: var(--font-semibold);
+  line-height: 1.2;
+
+  white-space: nowrap;
 
   transition: background var(--transition-fast),
     transform var(--transition-fast);
@@ -74,36 +84,25 @@
   transform: translateY(-2px);
 }
 
-.home-hero__primary span {
+.home-hero__primary span:last-child {
+  flex-shrink: 0;
+
   transition: transform var(--transition-fast);
 }
 
-.home-hero__primary:hover span {
+.home-hero__primary:hover span:last-child {
   transform: translateX(3px);
 }
 
-.home-hero__secondary {
-  display: inline-flex;
-  align-items: center;
+/* Keep both hero actions exactly the same width */
 
-  gap: var(--space-2);
-
-  padding-bottom: 0.25rem;
-
-  border-bottom: 1px solid var(--color-border);
-
-  color: var(--color-text);
-
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-semibold);
-
-  transition: color var(--transition-fast), border-color var(--transition-fast);
+.home-hero__actions > .business-card-download--hero {
+  flex: 0 0 220px;
 }
 
-.home-hero__secondary:hover {
-  color: var(--color-accent);
-  border-color: var(--color-accent);
-}
+/* =========================
+   SERVICES
+========================= */
 
 .home-hero__services {
   border-top: 1px solid var(--color-border);
@@ -133,6 +132,10 @@
   font-size: var(--font-size-sm);
   font-weight: var(--font-medium);
 }
+
+/* =========================
+   HERO BOTTOM
+========================= */
 
 .home-hero__bottom {
   display: grid;
@@ -195,16 +198,24 @@
   }
 
   .home-hero__actions {
-    flex-direction: column;
-    align-items: flex-start;
+    width: 100%;
 
-    gap: var(--space-4);
+    gap: var(--space-2);
+  }
+
+  .home-hero__primary,
+  .home-hero__actions > .business-card-download--hero {
+    flex: 1 1 0;
+
+    min-width: 0;
   }
 
   .home-hero__primary {
-    width: 100%;
+    padding: 0.85rem 0.9rem;
 
-    justify-content: space-between;
+    font-size: var(--font-size-sm);
+
+    gap: var(--space-2);
   }
 
   .home-hero__bottom {
