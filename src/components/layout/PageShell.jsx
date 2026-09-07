@@ -1,5 +1,6 @@
 import Header from "./Header";
 import Footer from "./Footer";
+import WhatsAppButton from "./WhatsAppButton";
 
 const PageShell = ({ children }) => {
   return (
@@ -9,6 +10,7 @@ const PageShell = ({ children }) => {
       <main>{children}</main>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
