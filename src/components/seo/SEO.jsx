@@ -4,7 +4,7 @@ import { siteConfig } from "../../config/site";
 
 const SEO = ({
   title,
-  description,
+  description = siteConfig.description,
   path = "/",
   image = siteConfig.ogImage,
   noIndex = false,
@@ -13,13 +13,11 @@ const SEO = ({
     ? `${title} | ${siteConfig.name}`
     : `${siteConfig.name} | Accounting & Business Advisory`;
 
-  const canonicalUrl =
-    siteConfig.url && !noIndex ? `${siteConfig.url}${path}` : null;
+  const canonicalUrl = new URL(path, siteConfig.url).toString();
 
-  const imageUrl =
-    siteConfig.url && !image.startsWith("http")
-      ? `${siteConfig.url}${image}`
-      : image;
+  const imageUrl = image.startsWith("http")
+    ? image
+    : new URL(image, siteConfig.url).toString();
 
   return (
     <Helmet>
@@ -32,26 +30,25 @@ const SEO = ({
         content={noIndex ? "noindex, nofollow" : "index, follow"}
       />
 
-      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      {!noIndex && <link rel="canonical" href={canonicalUrl} />}
 
       <meta property="og:type" content="website" />
-
       <meta property="og:site_name" content={siteConfig.name} />
-
       <meta property="og:title" content={fullTitle} />
-
       <meta property="og:description" content={description} />
 
-      {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+      {!noIndex && <meta property="og:url" content={canonicalUrl} />}
 
       <meta property="og:image" content={imageUrl} />
 
+      <meta
+        property="og:image:alt"
+        content="AK and Associates - Accounting and Business Advisory"
+      />
+
       <meta name="twitter:card" content="summary_large_image" />
-
       <meta name="twitter:title" content={fullTitle} />
-
       <meta name="twitter:description" content={description} />
-
       <meta name="twitter:image" content={imageUrl} />
     </Helmet>
   );

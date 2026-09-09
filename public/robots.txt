@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ak-and-associates.vercel.app/sitemap.xml
+Sitemap: https://www.akandassociates.com.np/sitemap.xml

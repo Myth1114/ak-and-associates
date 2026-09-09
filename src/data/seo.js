@@ -16,7 +16,7 @@ export const seo = {
   industries: {
     title: "Industries We Support",
     description:
-      "AK and Associates supports businesses across construction, energy, mineral, manufacturing, trade, commerce and agribusiness sectors.",
+      "AK and Associates supports businesses across construction, energy, mineral, manufacturing, trade and commerce, and agribusiness sectors in Nepal.",
     path: "/industries",
   },
 

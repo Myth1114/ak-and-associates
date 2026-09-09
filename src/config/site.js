@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "AK and Associates",
 
-  url: "ak-and-associates.vercel.app",
+  url: "https://www.akandassociates.com.np",
 
   description:
     "Accounting, payroll, tax advisory, financial guidance and business consulting support for businesses in Nepal.",

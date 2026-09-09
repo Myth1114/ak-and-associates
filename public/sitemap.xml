@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://ak-and-associates.vercel.app/</loc>
+    <loc>https://www.akandassociates.com.np/</loc>
   </url>
 
   <url>
-    <loc>https://ak-and-associates.vercel.app/services</loc>
+    <loc>https://www.akandassociates.com.np/services</loc>
   </url>
 
   <url>
-    <loc>https://ak-and-associates.vercel.app/industries</loc>
+    <loc>https://www.akandassociates.com.np/industries</loc>
   </url>
 
   <url>
-    <loc>https://ak-and-associates.vercel.app/about</loc>
+    <loc>https://www.akandassociates.com.np/about</loc>
   </url>
 
   <url>
-    <loc>https://ak-and-associates.vercel.app/contact</loc>
+    <loc>https://www.akandassociates.com.np/contact</loc>
   </url>
+
 </urlset>

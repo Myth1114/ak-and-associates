@@ -6,10 +6,14 @@ const BusinessSchema = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: "AK and Associates",
+
+    "@id": `${siteConfig.url}/#organization`,
+
+    name: siteConfig.name,
+
     url: siteConfig.url,
-    description:
-      "Accounting, payroll, tax advisory, financial guidance and business consulting support for businesses in Nepal.",
+
+    description: siteConfig.description,
 
     telephone: "+9779847031266",
 
@@ -17,6 +21,7 @@ const BusinessSchema = () => {
 
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Siddharthanagar-06",
       addressLocality: "Bhairahawa",
       addressRegion: "Lumbini Province",
       addressCountry: "NP",
