@@ -117,7 +117,7 @@ const Contact = () => {
 
                 <div>
                   <p className="meta-text">Phone</p>
-                  <strong>9847031266</strong>
+                  <strong>+977 9857087069</strong>
                 </div>
 
                 <MoveRight
@@ -140,7 +140,7 @@ const Contact = () => {
 
                 <div>
                   <p className="meta-text">WhatsApp</p>
-                  <strong>9847031266</strong>
+                  <strong>+977 9857087069</strong>
                 </div>
 
                 <MoveRight
@@ -161,7 +161,7 @@ const Contact = () => {
 
                 <div>
                   <p className="meta-text">Email</p>
-                  <strong>akandassociates@gmail.com</strong>
+                  <strong>akasso021@gmail.com</strong>
                 </div>
 
                 <MoveRight
