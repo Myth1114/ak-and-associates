@@ -2,12 +2,13 @@ import { useRef } from "react";
 
 import LeadershipSection from "../../components/home/LeadershipSection";
 import CTASection from "../../components/home/CTASection";
+import SEO from "../../components/seo/SEO";
 
 import useReveal from "../../hooks/useReveals";
 
-import "./About.css";
-import SEO from "../../components/seo/SEO";
 import { seo } from "../../data/seo";
+
+import "./About.css";
 
 const About = () => {
   const pageRef = useRef(null);
@@ -17,8 +18,13 @@ const About = () => {
   return (
     <div ref={pageRef}>
       <SEO {...seo.about} />
+
+      {/* ========================================
+          HERO
+      ======================================== */}
       <section
         className="about-page__hero"
+        aria-labelledby="about-page-title"
         data-reveal-group
         data-reveal-immediate
       >
@@ -28,50 +34,73 @@ const About = () => {
               About AK and Associates
             </p>
 
-            <h1 className="about-page__title page-title" data-reveal>
+            <h1
+              id="about-page-title"
+              className="about-page__title page-title"
+              data-reveal
+            >
               Practical financial support for businesses that need clarity and
               structure.
             </h1>
           </div>
 
           <p className="about-page__hero-copy page-description" data-reveal>
-            AK and Associates is an accounting and business advisory firm in
-            Nepal, supporting businesses with accounting, payroll, tax matters,
-            financial guidance and practical consulting.
+            AK and Associates is an accounting and business advisory firm based
+            in Siddharthanagar-06, Bhairahawa, Nepal, supporting businesses with
+            accounting, payroll management, tax advisory, financial guidance and
+            practical business consulting.
           </p>
         </div>
       </section>
 
-      <section className="about-page__intro" data-reveal-group>
+      {/* ========================================
+          THE FIRM
+      ======================================== */}
+      <section
+        className="about-page__intro"
+        aria-labelledby="about-firm-title"
+        data-reveal-group
+      >
         <div className="container-wide about-page__intro-inner">
           <p className="about-page__eyebrow eyebrow" data-reveal>
             The Firm
           </p>
 
           <div className="about-page__intro-content">
-            <h2 className="about-page__intro-title section-title" data-reveal>
+            <h2
+              id="about-firm-title"
+              className="about-page__intro-title section-title"
+              data-reveal
+            >
               Built around the financial work that keeps businesses running.
             </h2>
 
             <div className="about-page__intro-copy">
-              <p className="about-page__lead body-text--strong" data-reveal>
+              <p className="body-text--strong" data-reveal>
                 Established in 2078 B.S., AK and Associates works with
                 businesses that need dependable support across their day-to-day
                 financial operations.
               </p>
 
               <p className="body-text" data-reveal>
-                Our focus is practical: keeping financial records organized,
-                supporting payroll and tax-related work, helping businesses
-                understand their numbers and providing guidance when financial
-                decisions need greater clarity.
+                Our focus is practical: maintaining organized financial
+                information, supporting payroll and tax-related work, helping
+                businesses understand their financial position and providing
+                guidance when important decisions need greater clarity.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="about-page__facts" data-reveal-group>
+      {/* ========================================
+          FACTS
+      ======================================== */}
+      <section
+        className="about-page__facts"
+        aria-label="AK and Associates at a glance"
+        data-reveal-group
+      >
         <div className="container-wide about-page__facts-grid">
           <article className="about-page__fact" data-reveal>
             <span className="meta-text">01.</span>
@@ -86,8 +115,8 @@ const About = () => {
             <span className="meta-text">02.</span>
 
             <div>
-              <p className="meta-text">Primary Focus</p>
-              <strong>Accounting & Advisory</strong>
+              <p className="meta-text">Proprietor Experience</p>
+              <strong>10+ years</strong>
             </div>
           </article>
 
@@ -95,8 +124,8 @@ const About = () => {
             <span className="meta-text">03.</span>
 
             <div>
-              <p className="meta-text">Business Support</p>
-              <strong>Financial Operations</strong>
+              <p className="meta-text">Clients Supported</p>
+              <strong>100+</strong>
             </div>
           </article>
 
@@ -105,20 +134,27 @@ const About = () => {
 
             <div>
               <p className="meta-text">Based In</p>
-              <strong>Nepal</strong>
+              <strong>Bhairahawa, Nepal</strong>
             </div>
           </article>
         </div>
       </section>
 
-      <section className="about-page__approach" data-reveal-group>
+      {/* ========================================
+          APPROACH
+      ======================================== */}
+      <section
+        className="about-page__approach"
+        aria-labelledby="about-approach-title"
+        data-reveal-group
+      >
         <div className="container-wide about-page__approach-inner">
           <div className="about-page__approach-heading">
             <p className="about-page__eyebrow eyebrow" data-reveal>
               Our Approach
             </p>
 
-            <h2 className="section-title" data-reveal>
+            <h2 id="about-approach-title" className="section-title" data-reveal>
               Keep the financial side of business clear and useful.
             </h2>
           </div>
@@ -131,8 +167,8 @@ const About = () => {
                 <h3 className="subsection-title">Understand first</h3>
 
                 <p className="section-description">
-                  We start by understanding the business, its financial
-                  processes and where support is actually needed.
+                  We begin by understanding the business, its financial
+                  processes and where support can make a practical difference.
                 </p>
               </div>
             </article>
@@ -145,7 +181,8 @@ const About = () => {
 
                 <p className="section-description">
                   We help organize financial information and processes so they
-                  are easier to manage and understand.
+                  become easier to manage, review and use in everyday business
+                  decisions.
                 </p>
               </div>
             </article>
@@ -157,7 +194,8 @@ const About = () => {
                 <h3 className="subsection-title">Stay practical</h3>
 
                 <p className="section-description">
-                  Our guidance focuses on real business needs without adding
+                  Our guidance stays focused on real business needs, clear
+                  information and practical financial management without
                   unnecessary complexity.
                 </p>
               </div>
@@ -167,6 +205,7 @@ const About = () => {
       </section>
 
       <LeadershipSection />
+
       <CTASection />
     </div>
   );

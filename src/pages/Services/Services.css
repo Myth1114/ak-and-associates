@@ -119,6 +119,44 @@
 }
 
 /* ========================================
+   SERVICE LINK
+======================================== */
+
+.services-page__service-link {
+  grid-column: 2;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: fit-content;
+
+  gap: var(--space-5);
+
+  margin-top: var(--space-5);
+
+  color: var(--color-text);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-semibold);
+
+  transition: color var(--transition-fast);
+}
+
+.services-page__service-link span {
+  color: var(--color-accent);
+
+  transition: transform var(--transition-fast);
+}
+
+.services-page__service-link:hover {
+  color: var(--color-accent);
+}
+
+.services-page__service-link:hover span {
+  transform: translateX(3px);
+}
+/* ========================================
    CTA
 ======================================== */
 
@@ -235,6 +273,9 @@
 
     gap: var(--space-7);
   }
+  .services-page__service-link {
+    grid-column: 2;
+  }
 }
 
 /* ========================================
@@ -266,5 +307,9 @@
 
   .services-page__cta-link {
     width: 100%;
+  }
+  .services-page__service-link {
+    grid-column: auto;
+    margin-top: 0;
   }
 }

@@ -74,10 +74,10 @@ const Services = () => {
                 ))}
               </div>
               <Link
-                to={`/contact?service=${service.id}`}
+                to={`/services/${service.slug}`}
                 className="services-page__service-link"
               >
-                Discuss {service.title}
+                Explore {service.title}
                 <span aria-hidden="true">→</span>
               </Link>
             </article>
