@@ -1,15 +1,15 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-
 import { MoveRight } from "lucide-react";
 
 import { industryGroups } from "../../data/industries";
+import { seo } from "../../data/seo";
 
 import useReveal from "../../hooks/useReveals";
 
-import "./Industries.css";
 import SEO from "../../components/seo/SEO";
-import { seo } from "../../data/seo";
+
+import "./Industries.css";
 
 const Industries = () => {
   const pageRef = useRef(null);
@@ -19,6 +19,11 @@ const Industries = () => {
   return (
     <div ref={pageRef}>
       <SEO {...seo.industries} />
+
+      {/* ========================================
+          HERO
+      ======================================== */}
+
       <section
         className="industries-page__hero"
         data-reveal-group
@@ -40,54 +45,74 @@ const Industries = () => {
             className="industries-page__hero-copy page-description"
             data-reveal
           >
-            AK and Associates works with businesses across infrastructure,
-            manufacturing, trade and agribusiness, providing accounting and
-            advisory support that reflects how each sector operates.
+            AK and Associates supports businesses across infrastructure,
+            production, trade, technology, services, hospitality and other
+            sectors with accounting, payroll, tax and financial guidance shaped
+            around how each business operates.
           </p>
         </div>
       </section>
 
-      <section className="industries-page__groups" data-reveal-group>
+      {/* ========================================
+          INDUSTRY GROUPS
+      ======================================== */}
+
+      <section className="industries-page__groups">
         <div className="container-wide">
           {industryGroups.map((group) => (
             <article
               key={group.id}
               id={group.id}
               className="industries-page__group"
-              data-reveal
+              data-reveal-group
             >
-              <div className="industries-page__group-meta">
+              <div className="industries-page__group-meta" data-reveal>
                 <span className="meta-text">{group.number}.</span>
-
                 <p className="meta-text">Industry Group</p>
               </div>
 
-              <div className="industries-page__group-content">
+              <div className="industries-page__group-content" data-reveal>
                 <h2 className="section-title">{group.title}</h2>
 
-                <p className="section-description">
-                  Financial and business support tailored to the operational
-                  needs commonly found across this sector.
-                </p>
+                <p className="section-description">{group.description}</p>
               </div>
 
-              <div className="industries-page__industry-list">
+              <div className="industries-page__industry-list" data-reveal>
                 {group.industries.map((industry) => (
-                  <div
+                  <Link
                     key={industry.id}
                     id={industry.id}
+                    to={`/industries/${industry.slug}`}
                     className="industries-page__industry"
+                    aria-label={`Explore ${industry.title}`}
                   >
                     <span className="meta-text">{industry.number}.</span>
 
-                    <h3 className="card-title">{industry.title}</h3>
-                  </div>
+                    <div className="industries-page__industry-main">
+                      <h3 className="card-title">{industry.title}</h3>
+
+                      <p className="industries-page__industry-description">
+                        {industry.shortDescription}
+                      </p>
+                    </div>
+
+                    <MoveRight
+                      className="industries-page__industry-arrow"
+                      size={20}
+                      strokeWidth={1.25}
+                      aria-hidden="true"
+                    />
+                  </Link>
                 ))}
               </div>
             </article>
           ))}
         </div>
       </section>
+
+      {/* ========================================
+          HOW WE SUPPORT
+      ======================================== */}
 
       <section className="industries-page__support" data-reveal-group>
         <div className="container-wide industries-page__support-inner">
@@ -113,6 +138,10 @@ const Industries = () => {
         </div>
       </section>
 
+      {/* ========================================
+          CTA
+      ======================================== */}
+
       <section className="industries-page__cta" data-reveal-group>
         <div className="container-wide industries-page__cta-inner">
           <div>
@@ -136,8 +165,9 @@ const Industries = () => {
               className="industries-page__cta-link"
               data-reveal
             >
-              Talk to Us
-              <MoveRight size={22} strokeWidth={1} />
+              <span>Talk to Us</span>
+
+              <MoveRight size={22} strokeWidth={1} aria-hidden="true" />
             </Link>
           </div>
         </div>

@@ -19,38 +19,44 @@ const IndustriesSection = () => {
           </h2>
 
           <p className="home-industries__intro section-description" data-reveal>
-            We support businesses across infrastructure, manufacturing, trade
-            and agriculture with accounting and financial management tailored to
-            their day-to-day operations.
+            We support businesses across infrastructure, production, trade,
+            technology, services and hospitality with accounting and financial
+            management shaped around their day-to-day operations.
           </p>
         </div>
 
         <div className="home-industries__grid">
-          {industryGroups.map((group) => (
-            <article
-              key={group.id}
-              className="home-industries__group"
-              data-reveal
-            >
-              <div className="home-industries__group-top">
-                <span className="meta-text">{group.number}.</span>
+          {industryGroups.map((group) => {
+            const isSingleIndustry = group.industries.length === 1;
 
-                <p className="meta-text">Sector</p>
-              </div>
+            return (
+              <article
+                key={group.id}
+                className={`home-industries__group ${
+                  isSingleIndustry ? "home-industries__group--single" : ""
+                }`}
+                data-reveal
+              >
+                <div className="home-industries__group-top">
+                  <span className="meta-text">{group.number}.</span>
 
-              <h3 className="subsection-title">{group.title}</h3>
+                  <p className="meta-text">Sector</p>
+                </div>
 
-              <div className="home-industries__items">
-                {group.industries.map((industry) => (
-                  <div key={industry.id}>
-                    <span className="meta-text">{industry.number}.</span>
+                <h3 className="subsection-title">{group.title}</h3>
 
-                    <p className="body-text--strong">{industry.title}</p>
-                  </div>
-                ))}
-              </div>
-            </article>
-          ))}
+                <div className="home-industries__items">
+                  {group.industries.map((industry) => (
+                    <div key={industry.id}>
+                      <span className="meta-text">{industry.number}.</span>
+
+                      <p className="body-text--strong">{industry.title}</p>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         <div className="home-industries__footer" data-reveal>

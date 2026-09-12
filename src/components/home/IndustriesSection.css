@@ -1,6 +1,5 @@
 .home-industries {
   padding-block: var(--section-space);
-
   background: var(--color-bg);
 }
 
@@ -76,6 +75,18 @@
   max-width: 500px;
 
   margin-bottom: auto;
+}
+
+/* =========================
+   SINGLE INDUSTRY GROUP
+========================= */
+
+.home-industries__group--single .subsection-title {
+  margin-bottom: 0;
+}
+
+.home-industries__group--single .home-industries__items {
+  margin-top: var(--space-8);
 }
 
 /* =========================
@@ -199,6 +210,10 @@
   }
 
   .home-industries__items {
+    margin-top: var(--space-7);
+  }
+
+  .home-industries__group--single .home-industries__items {
     margin-top: var(--space-7);
   }
 
