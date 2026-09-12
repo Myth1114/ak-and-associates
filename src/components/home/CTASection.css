@@ -23,8 +23,7 @@
 
 .home-cta__eyebrow {
   margin-bottom: var(--space-5);
-
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.76) !important;
 }
 
 .home-cta .section-title {
@@ -42,9 +41,46 @@
 }
 
 .home-cta__action .section-description {
-  max-width: 420px;
+  max-width: 460px;
 
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.76);
+}
+
+/* =========================
+   LOCATION
+========================= */
+
+.home-cta__location {
+  display: flex;
+  align-items: flex-start;
+
+  gap: var(--space-2);
+
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.home-cta__location svg {
+  flex-shrink: 0;
+
+  margin-top: 0.2rem;
+}
+
+.home-cta__location p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: var(--space-2);
+
+  color: inherit;
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-medium);
+  line-height: 1.5;
+}
+
+.home-cta__location p span {
+  color: rgba(255, 255, 255, 0.45);
 }
 
 /* =========================
@@ -111,6 +147,10 @@
 ========================= */
 
 @media (max-width: 600px) {
+  .home-cta__location p {
+    align-items: flex-start;
+  }
+
   .home-cta__button {
     width: 100%;
   }

@@ -28,8 +28,9 @@ const HeroSection = () => {
           </h1>
 
           <p className="home-hero__description page-description" data-reveal>
-            AK and Associates supports businesses with accounting, payroll, tax
-            advisory, financial guidance and practical business consulting.
+            Based in Bhairahawa, Nepal, AK and Associates supports businesses
+            with accounting, payroll, tax advisory, financial guidance and
+            practical business consulting.
           </p>
 
           <div className="home-hero__actions" data-reveal>
